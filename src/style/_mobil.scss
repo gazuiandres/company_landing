@@ -1,0 +1,904 @@
+@import '_fonts';
+@import '_mixins';
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+//Header of the web
+header{
+    min-height: 100vh;
+    background: url('../../img/portada@100x-min.png');
+    display: flex;
+    flex-direction: column;
+    background-position: center center;
+    @include tablet(){
+        .nav{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    }
+    @include desktop(){
+        .nav{
+            width: 1260px;
+        }
+    }
+
+    .logo{
+        color: white;
+        padding: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        .img_logo{
+            width: 50vw;
+            @include tablet(){
+                width: 70%;
+            }
+        }
+
+        .mobil_nav{
+            .close{
+                display: none;
+            }
+            cursor: pointer;
+            font-size: 1.4rem;
+            padding-top: 1rem;
+            padding-bottom: .5em;
+            @include tablet(){
+                display: none;
+            }
+        }
+    }
+}
+
+//content of the navigator
+.nav-cont{
+    background-color: red;
+    height:0;
+    color: $white;
+    .nav-order{
+        margin: 0;
+        font-family: $font_principal;
+        transition: transform .4s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-100%);
+        @include tablet(){
+            transform: translateX(0);
+            flex-direction: row;
+            padding: 2.5rem 1rem; 
+        }
+    }
+}
+
+
+
+.nav-lists{
+    list-style: none;
+    padding: 0 .7em 1.3em 0;
+    @include desktop(){
+        padding-right: 2em;
+        font-size: 1.1em;
+    }
+}
+
+.nav-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+
+//content of the header page
+.title_header{
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    @include tablet(){
+        padding: 0;
+    }
+}
+
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font_principal;
+    color: $white;
+    font-size: 1.3rem;
+    @include tablet(){
+        font-size: 2.5rem;
+    }
+}
+
+.parrafo{
+    font-family: $font_extra;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    @include tablet(){
+        font-size: 1.5rem;
+    }
+}
+
+.boton{
+    background-color: white;
+    padding: .7em 2em;
+    border-radius: 50px;
+    cursor: pointer;
+    @include tablet(){
+        padding: 1.3em 3em;
+    }
+
+    .button{
+        text-decoration: none;
+        color: black;
+        font-family: $font_secundaria;
+        font-weight: 700;
+        @include tablet(){
+            font-size: 1.3em;
+        }
+    }
+}
+
+//section about
+
+.about{
+    padding: 3.5rem .8rem 3.5rem;
+    font-family: $font_principal; 
+    @include desktop(){
+        margin: 0 auto;
+        width: 1090px;
+        padding: 8rem 0 ;
+    } 
+}
+
+.about_title{
+    position: relative;         
+    margin-bottom: 2rem;
+    @include tablet(){
+        font-size: 2.5rem;
+    }
+}
+
+.about_sub{
+    font-weight: 300;
+    @include tablet(){
+        font-size: 2rem;
+    }
+}
+
+.about_title::before{
+    content: '';
+        width: 50%;
+        background-color: $purple;
+        height: 3px;
+        position: absolute;
+        top: 120%;
+    @include tablet(){
+        width: 30%;
+        height: 4px;
+    }
+    @include desktop(){
+        width: 25%;
+        height: 6px;
+    }
+}
+
+.about_body{
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    grid-gap: 1rem; 
+    padding-top: 2rem;
+    font-family: $font_extra;
+    font-size: .7em;
+    @include tablet(){
+        font-size: 1em;
+        .about_content{
+            justify-content: center;
+            align-self: flex-end;
+        }
+    }
+    @include desktop(){
+        grid-template-columns: 60% 1fr;
+        font-size: 1.3em;
+        .about_content{
+            align-self: center;
+        }
+    }
+    .about_logo{
+        align-self: center;
+        @include desktop(){
+            position: relative;
+            width: 80%;
+            justify-self: flex-end;
+            align-self: flex-start;
+            top: -25px;
+        }
+    }
+}
+
+// section herramientas
+
+
+
+.tools{
+    @include tablet(){
+        margin: 0 auto;
+        padding: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+    }
+    @include desktop(){
+        margin: 0 auto;
+        width: 1090px
+    }
+    .tool_main{
+        padding-bottom: 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include tablet(){
+            padding-top: 1rem;
+            display: grid;
+            grid-template-columns: unset;
+        }
+    }
+    .tool-content{
+        font-family: $font_extra;
+        text-align: center;
+        padding-top: .5em;
+        font-size: .8em;
+        @include desktop(){
+            font-size: 1em;
+        }
+    }
+
+    .tool-logo{
+        justify-self: center;
+        width: 80%;
+        @include desktop(){
+            width: 50%;
+        }
+    }
+
+    .tool-logo2{
+        justify-self: center;
+        width: 60%;
+        @include desktop(){
+            width: 37%;
+        }
+    }
+
+    .tool-logo3{
+        justify-self: center;
+        width: 42%;
+        @include desktop(){
+            width: 25%;
+        }
+    }
+}
+
+
+//section meme
+
+.meme{
+    padding: 2rem 0 3rem 0;
+    @include desktop(){
+        margin: 0 auto;
+        width: 1180px;
+    }
+    .meme-title{
+        text-align: center;
+        font-weight: 300;
+        font-family: $font_principal;
+        font-size: 1.3em;
+        padding-top: 2rem;
+        padding-bottom: 6rem;
+        @include tablet(){
+            padding-bottom: 5em;
+            font-size: 1.7em;
+        }
+        @include desktop(){
+            font-size: 2em;
+            padding-bottom: 7rem;
+        }
+    }
+
+    .meme-content{
+        position: relative;
+        padding: 0 .5rem;
+        padding-bottom: 3rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 2rem;
+        @include tablet(){
+            grid-row-gap: 3rem;
+        }
+        @include desktop(){
+            padding-bottom: 4rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .meme-text{
+            font-family: $font_extra;
+            text-align: center;
+            font-size: .7em;
+            @include tablet(){
+                font-size: .9em;
+            }
+            @include desktop(){
+                padding: 0 6em;
+                font-size: 1em;
+            }
+        }
+
+        .m-title{
+            font-family: $font_principal;
+            font-weight: 700;
+            text-align: center;
+            padding-bottom: .4rem;
+            font-size: 1em;
+            @include desktop(){
+                font-size: 1.2em;
+                letter-spacing: 1px;
+                padding-bottom: .4em;
+                text-align: center;
+            }
+        }
+        
+        .icon-build{
+            display: grid;
+        }
+    }
+}
+
+//Alineado de imagenes
+
+.m-extra{
+    justify-self: center;
+    width: 25%;
+    padding-bottom: 1em;
+    @include desktop(){
+        width: 17%;
+    }
+}
+
+.principal-meme{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    transform: translate(-9%, 0);
+    @include tablet(){
+        width: 40%;
+        transform: translateX(10%);
+        top: 0;
+
+    }
+    @include desktop(){
+        width: 40%;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+    }
+}
+
+@include phone(){
+    .cangrejo, .agua{
+        grid-row: 3 / 4; 
+    }
+
+    .alpaca{
+        grid-column: 2 / 3;
+    }
+
+    .microphone{
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+@include desktop(){
+    .agua{
+        position: relative;
+        top: 1rem;
+        left: -6rem;
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+        justify-self: flex-start;
+    }
+
+    .cangrejo{
+        position: relative;
+        top: 9rem;
+        left: -6rem;
+        grid-column: 3 / 4;
+        grid-row: 1 / 2; 
+    }
+
+    .alpaca{
+        position: relative;
+        top: 5rem;
+        right: -6rem;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .microphone{
+        grid-column: unset;
+        grid-row: unset;
+        position: relative;
+        top: 2rem;
+        right: -6rem;
+    }
+}
+
+
+
+//our best work
+
+.best-work{
+    background-color: #dedede;
+
+    .b-header{
+        padding: 2rem 0 1.4rem 0;
+        justify-content: center;
+        display: flex;
+        @include tablet(){
+            padding-top: 2rem;
+        }
+        @include desktop(){
+            padding-top: 3em; 
+        }
+    }
+    
+    .b-title{
+        color: $purple;
+        font-size: 1.4em;
+        font-weight: 300;
+        font-family: $font_principal;
+        @include tablet(){
+            font-size: 2em;
+        }
+        @include desktop(){
+            font-size: 2.5em;
+        }
+    }
+
+    .b-subtitle{
+        padding-bottom: 2rem;
+        text-align: center;
+        font-size: 1em;
+        font-weight: 300;
+        font-family: $font_extra;
+        @include tablet(){
+            padding-bottom: 2em;
+            font-size: 1.3em;
+        }
+        @include desktop(){
+            padding-bottom: 2.5em;
+            font-size: 1.5em;
+        }
+    }
+
+    .portafolio{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        @include tablet(){
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        .b-port{
+            overflow: hidden;
+            
+        }
+
+        .b-p-img:hover{
+            transition: 2.5s;
+            transform: scale(2);
+        }
+    }
+}
+
+.t-left{
+    margin-top: .2rem;
+    margin-right: .3rem;
+    align-self: center;
+    width: 20%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(214, 214, 214, 0.884), rgba(19, 18, 18, 0.575));
+    @include tablet(){
+        width: 30%;
+        margin-right: 1rem;
+    }
+}
+
+.t-right{
+    align-self: center;
+    width: 20%;
+    margin-left: .2rem;
+    margin-top: .3rem;
+    height: 1px;
+    background: linear-gradient(to right, rgba(19, 18, 18, 0.575), rgba(214, 214, 214, 0.884));
+    @include tablet(){
+        width: 30%;
+        margin-left: 1rem;
+    }
+}
+
+
+.b-footer{
+    background-color: #333;
+    color: $white;
+    font-family: $font_secundaria;
+    font-weight: 300;
+
+    .b-f-content{
+        padding: 1.5rem 0;
+        text-align: center;
+        @include desktop(){
+            padding: 2rem 0;
+        }
+    }
+    
+
+    .b-f-text{
+        padding-right: .5em;
+        @include tablet(){
+            font-size: 1.1em;
+        }
+        @include desktop(){
+            font-size: 1.2em;
+        }
+    }
+
+    .b-f-link{
+        cursor: pointer;
+        border: #dedede 1.5px solid;
+        color: $white;
+        padding: .3em 1.3em;
+        text-decoration: none;
+        @include tablet(){
+            border: #dedede 1.8px solid;
+            padding: .3em 1.5em;
+        }
+        @include desktop(){
+            font-size: 1.1em;
+            border: $white 2px solid;
+            padding: .6em 1.8em;
+        }
+    }
+}
+
+//blog
+
+.blog{
+    padding: 5rem 0 3rem;
+}
+
+.blog-title{
+    font-size: 1.7em;
+    position: relative;
+    text-align: center;
+    margin-bottom: 6rem;
+    font-family: $font_principal;
+    @include tablet(){
+        font-size: 2em;
+    }
+}
+
+.blog-title::before{
+    content: '';
+        width: 30%;
+        background-color: $purple;
+        height: 4px;
+        position: absolute;
+        top: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+    @include tablet(){
+        width: 20%;
+        height: 4px;
+    }
+    @include desktop(){
+        width: 10%;
+        height: 6px;
+    }
+}
+
+.blog-feed{
+    padding: 0 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    @include tablet(){
+        padding: 0 2rem;
+        grid-gap: 0 2.3rem;
+    }
+    @include desktop(){
+        padding: 1rem 1rem;
+        grid-gap: 0 2rem;
+    }
+}
+
+.blog-content{
+    font-family: $font_extra;
+}
+
+.b-c-title{
+    text-align: center;
+    padding: 1.5rem 0 1em 0;
+    font-weight: 700;
+    font-family: $font_secundaria;
+    @include tablet(){}
+}
+
+.blog-date{
+    font-weight: 700;
+    text-align: center;
+}
+
+.b-c-text{
+    text-align: center;
+    font-size: 1em;
+    justify-content: center;
+    padding: 2em 0 3em 0;
+    @include tablet(){
+        text-align: start;
+        margin: 0 auto;
+        width: 70%;
+    }
+    @include desktop(){
+        margin: 0;
+        font-size: 1.2em;
+        width: 100%;
+    }
+}
+
+// Team section
+
+.team{
+    padding: 6rem 2rem;
+    background: url('../../img/fondo-contacto\ fondo@100x.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-gap: 3rem 1rem; 
+    grid-template-columns: repeat(2, 1fr);
+    @include desktop(){
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .team-c-links{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include desktop(){
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            padding-top: 2rem;
+            justify-self: center;
+            width: 70%;
+            @include desktop(){
+                width: 30%;
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    .team-c{
+        font-size: 1.4em;
+        color: $white;
+        font-family: $font_extra;
+        text-align: center;
+        display: grid;
+        @include tablet(){
+            font-size: 2em;
+        }
+    }
+
+    .team-name{
+        margin-bottom: 0rem;
+    }
+
+    .team-c-image{
+        justify-self: center;
+        width: 70%;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+}
+
+//patrocinadores
+
+
+// footer
+
+.footer{
+    padding: 1em 1em;
+    background-color: black;
+}
+
+.f-header{
+    padding-bottom: 2em;
+    color: $white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row: auto auto;
+    @include desktop(){
+        margin: 0 auto;
+        width: 1090px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: unset;
+    }
+}
+
+
+.f-contenido{
+    padding: 0;
+    margin: 0;
+}
+
+.f-footer{
+    @include desktop(){
+        margin: 0 auto;
+        width: 1090px;  
+    }
+}
+
+.f-contacto{
+    .f-c-title{
+        @include tablet(){
+            margin-bottom: 2em;
+        }
+        @include tablet(){
+            margin-bottom: 0;
+        }
+    }
+    p{
+        padding-left: 0;
+        margin-bottom: 1em;
+        font-size: 1em;
+        font-family: $font_extra;
+        @include desktop(){
+            font-size: 1.3em;
+        }
+
+    }
+    
+}
+
+.f-comentarios{
+    text-align: center;
+    grid-column: 1 / 3;
+    @include desktop(){
+        text-align: start;
+        grid-column: 3 / 4;
+    }
+
+    textarea{
+        font-family: $font_secundaria;
+        color: $white;
+        border: none;
+        background-color: rgba(94, 90, 90, 0.24);
+    }
+
+    h3{
+        text-align: center;
+        padding-bottom: 2rem;
+        @include desktop(){
+            padding-bottom: .5em;
+        }
+    }
+}
+
+.f-c-order{
+    padding: 0 0 1em 0;
+    list-style: none;
+    margin: 0;
+
+    .f-c-list{
+        cursor: pointer;
+        font-size: 1em;
+        margin-bottom: .6em;
+        font-family: $font_extra;
+        @include tablet(){
+            margin-bottom: 1em;
+        }
+        @include desktop(){
+            margin-bottom: 0;
+            font-size: 1.3em;
+        }
+    }
+}
+
+.f-c-title{
+    padding-top: 1.2rem; 
+    font-family: $font_secundaria;
+    padding-bottom: 2rem;
+    @include tablet(){
+        padding-bottom: 2rem;
+        text-align: start;
+        font-size: 1.5em;
+    }
+    @include desktop(){
+        padding-bottom: 2rem;
+        font-size: 2em;
+        text-align: start;
+    }
+}
+
+.hr{
+    background-color: rgba(206, 198, 198, 0.226);
+    height: .5px;
+    margin-bottom: 2em;
+}
+
+.f-footer{
+    padding: 1em 0;
+    margin: 0 auto;
+    color: $white;
+    .f-f-content{
+        display: flex;
+    }
+
+    .f-img{
+        flex-basis: 10rem;
+        width: 50%;
+        @include desktop(){
+            width: 100%;
+        }
+    }
+
+    .design{
+        display: flex;
+        font-size: .8em;
+        @include tablet(){
+            font-size: 1em;
+        }
+        @include desktop(){
+            font-size: 1.3em;
+        }
+        .design-1{
+            font-family: $font_extra;
+            align-self: center;
+            padding-bottom: 1em;
+            @include tablet(){
+                padding-bottom: .7em;
+                padding-left: 2rem;
+            }
+            @include desktop(){
+                padding-bottom: .9em;
+                padding-left: 4rem;
+            }
+            .design-link{
+                color: $white;
+                text-decoration: none;
+            }
+        }
+        .design-2{
+            font-family: $font_extra;
+            align-self: center;
+            padding-bottom: .6em;
+            padding-left: 1em;
+            display: none;
+            @include tablet(){
+                display: block;
+            }
+            @include desktop(){
+                padding-bottom: .9em;
+                padding-left: 2rem;
+            }
+            
+        }
+    }
+}

@@ -33,21 +33,24 @@ header{
         display: flex;
         justify-content: space-between;
         .img_logo{
-            width: 50vw;
+            width: 50%;
             @include tablet(){
                 width: 70%;
             }
         }
 
         .mobil_nav{
-            .close{
+
+            cursor: pointer;
+            font-size: 1.5rem;
+            align-self: center;
+            padding-bottom: .4em;
+            padding-right: .7em;
+            @include tablet(){
                 display: none;
             }
-            cursor: pointer;
-            font-size: 1.4rem;
-            padding-top: 1rem;
-            padding-bottom: .5em;
-            @include tablet(){
+
+            .close{
                 display: none;
             }
         }
@@ -501,8 +504,12 @@ header{
             
         }
 
+        .b-p-img{
+            transition: 1s;
+        }
+
         .b-p-img:hover{
-            transition: 2.5s;
+            transition: 1.5s;
             transform: scale(2);
         }
     }
@@ -545,17 +552,23 @@ header{
         padding: 1.5rem 0;
         text-align: center;
         @include desktop(){
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 2rem 0;
         }
     }
     
 
     .b-f-text{
+        margin-bottom: 1rem;
         padding-right: .5em;
         @include tablet(){
             font-size: 1.1em;
         }
         @include desktop(){
+            padding-right: 1.2em;
+            margin: 0;
             font-size: 1.2em;
         }
     }
@@ -573,7 +586,7 @@ header{
         @include desktop(){
             font-size: 1.1em;
             border: $white 2px solid;
-            padding: .6em 1.8em;
+            padding: .5em 1.9em;
         }
     }
 }
@@ -852,15 +865,16 @@ header{
     }
 
     .f-img{
-        flex-basis: 10rem;
-        width: 50%;
+        width: 40%;
         @include desktop(){
-            width: 100%;
+            width: 15%;
         }
     }
 
     .design{
         display: flex;
+        padding-top: .3em;
+        padding-left: .4em;
         font-size: .8em;
         @include tablet(){
             font-size: 1em;
